@@ -12,7 +12,7 @@ type CustomConfig = {
       currentColor: "currentColor";
       white: "#ffffff";
       black: "#000000";
-      beige: "#f1efe7";
+      beige: "#ede8ea";
 
       // https://colorkit.io/shades-tints#db6d6d-9 - REDS
       red: {

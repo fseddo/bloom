@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+const withMT = require("@material-tailwind/react/utils/withMT");
 
-export default {
+export default withMT({
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     boxShadow: {
@@ -12,7 +13,8 @@ export default {
       currentColor: "currentColor",
       white: "#ffffff",
       black: "#000000",
-      beige: "#f1efe7",
+      beige: "#e6e6e6",
+      subtext: "#000000",
 
       // https://colorkit.io/shades-tints#db6d6d-9 - REDS
       red: {
@@ -64,4 +66,4 @@ export default {
     },
   },
   plugins: [],
-};
+});
