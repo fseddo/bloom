@@ -1,5 +1,3 @@
-// import { Carousel } from "./Carousel";
-
 import { Carousel } from "@material-tailwind/react";
 
 export const Home = () => {
