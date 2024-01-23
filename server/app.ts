@@ -11,6 +11,32 @@ const __dirname = path.dirname(__filename);
 
 export const app = express();
 
+const PORT = 8080;
+
+//CORS middlware
+app.use(function (req, res, next) {
+  // Website you wish to allow to connect
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    process.env.VITE_FRONTEND_HOST_NAME ?? ""
+  );
+
+  // Request methods you wish to allow
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+  );
+
+  // Request headers you wish to allow
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "X-Requested-With,content-type"
+  );
+
+  // Pass to next layer of middleware
+  next();
+});
+
 // body parsing middleware
 app.use(express.json());
 
@@ -38,8 +64,6 @@ app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(err.status || 500).send(err.message || "Internal server error.");
 });
-
-const PORT = 8080;
 
 const init = async () => {
   try {
