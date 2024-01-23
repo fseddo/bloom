@@ -3,12 +3,12 @@ import { Flower } from "../db/models/Flower";
 import { orderRouter } from "./orders";
 import { flowerRouter } from "./flowers";
 
-const router = Router();
+export const apiRouter = Router();
 
-router.use("/flowers", flowerRouter);
-router.use("/orders", orderRouter);
+apiRouter.use("/flowers", flowerRouter);
+apiRouter.use("/orders", orderRouter);
 
-router.use((req, res, next) => {
+apiRouter.use((req, res, next) => {
   const error = new Error("Not Found");
   next(error);
 });
