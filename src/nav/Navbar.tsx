@@ -8,7 +8,7 @@ export const Navbar = () => {
         <div className="min-w-[250px]">
           <img width={250} src="logo.png" />
         </div>
-        <div className="inline-block m-auto text-subtext font-quicksand p-6 text-lg ml-[250px] ">
+        <div className="inline-block m-auto text-subtext font-quicksand p-6 text-lg">
           <Link className="px-8" to="/">
             Home
           </Link>

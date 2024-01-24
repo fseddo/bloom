@@ -13,6 +13,7 @@ type CustomConfig = {
       white: "#ffffff";
       black: "#000000";
       beige: "#ede8ea";
+      catalog: "#f6f5f8";
 
       // https://colorkit.io/shades-tints#db6d6d-9 - REDS
       red: {

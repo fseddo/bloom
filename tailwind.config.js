@@ -15,6 +15,7 @@ export default withMT({
       black: "#000000",
       beige: "#e6e6e6",
       subtext: "#000000",
+      catalog: "#fbfbfb",
 
       // https://colorkit.io/shades-tints#db6d6d-9 - REDS
       red: {
@@ -61,7 +62,7 @@ export default withMT({
     },
     fontFamily: {
       sans: ["Lato", "sans-serif"],
-      playfair: ['"Playfair Display"'],
+      playfair: ["Playfair Display"],
       quicksand: ["Quicksand"],
     },
   },

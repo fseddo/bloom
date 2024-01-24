@@ -16,10 +16,7 @@ const PORT = 8080;
 //CORS middlware
 app.use(function (req, res, next) {
   // Website you wish to allow to connect
-  res.setHeader(
-    "Access-Control-Allow-Origin",
-    process.env.VITE_FRONTEND_HOST_NAME ?? ""
-  );
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173");
 
   // Request methods you wish to allow
   res.setHeader(

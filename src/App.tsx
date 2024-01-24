@@ -3,7 +3,7 @@ import { Routes } from "./nav/Routes";
 
 const App = () => {
   return (
-    <div className="flex h-screen overflow-x-hidden bg-blue-100 flex-col ">
+    <div className="flex h-screen overflow-x-hidden flex-col ">
       <Navbar />
       <Routes />
     </div>
