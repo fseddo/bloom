@@ -3,6 +3,7 @@ import { Home } from "../home/Home";
 import { Catalog } from "../catalog/Catalog";
 import { Contact } from "../contact/Contact";
 import { About } from "../about/About";
+import { FlowerDetails } from "../flowerDetails/FlowerDetails";
 
 export const Routes = () => {
   return (
@@ -11,6 +12,7 @@ export const Routes = () => {
       <Route path="/catalog" element={<Catalog />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/catalog/:flowerId" element={<FlowerDetails />} />
       <Route path="/" element={<Home />} />
     </Switch>
   );
