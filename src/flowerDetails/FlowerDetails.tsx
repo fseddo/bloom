@@ -10,7 +10,7 @@ export const FlowerDetails = () => {
   const [selectedFlower, setSelectedFlower] = useAtom(selectedFlowerAtom);
   const { flowerId } = useParams<{ flowerId: string }>();
 
-  const { data: requestedFlower, isLoading } = useQuery({
+  const { data: requestedFlower } = useQuery({
     queryKey: [QueryKey.SelectedFlower, flowerId],
     queryFn: () => getFlower({ id: flowerId }),
   });

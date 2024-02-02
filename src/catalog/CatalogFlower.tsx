@@ -5,6 +5,8 @@ import { useGesture } from "@use-gesture/react";
 import { animated, to, useSpring } from "@react-spring/web";
 import { Link } from "react-router-dom";
 import { atom, useAtom } from "jotai";
+import { getPath } from "../common/getPath";
+import { AppRoute } from "../common/AppRoute";
 
 type Props = {
   flower: Flower;
@@ -40,7 +42,9 @@ export const CatalogFlower = ({ flower }: Props) => {
 
   return (
     <div className="p-2">
-      <Link to={`/catalog/${flower.id}`}>
+      <Link
+        to={getPath(AppRoute.FlowerDetails, { flowerId: flower.id.toString() })}
+      >
         <div
           className="z-10 overflow-hidden max-w-[700px] max-h-[500px] cursor-pointer"
           onClick={handleOnClickFlower}

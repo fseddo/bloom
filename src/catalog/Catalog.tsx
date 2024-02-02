@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import { QueryKey } from "../common/QueryKey";
 
 export const Catalog = () => {
-  const { data: flowers, isLoading } = useQuery({
+  const { data: flowers } = useQuery({
     queryKey: [QueryKey.Flowers],
     queryFn: getFlowers,
   });
