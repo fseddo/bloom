@@ -4,16 +4,16 @@ import { Catalog } from "../catalog/Catalog";
 import { Contact } from "../contact/Contact";
 import { About } from "../about/About";
 import { FlowerDetails } from "../flowerDetails/FlowerDetails";
+import { AppRoute } from "../common/AppRoute";
 
 export const Routes = () => {
   return (
     <Switch>
-      <Route path="/" element={<Home />} />
-      <Route path="/catalog" element={<Catalog />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/catalog/:flowerId" element={<FlowerDetails />} />
-      <Route path="/" element={<Home />} />
+      <Route path={AppRoute.Home} element={<Home />} />
+      <Route path={AppRoute.Catalog} element={<Catalog />} />
+      <Route path={AppRoute.About} element={<About />} />
+      <Route path={AppRoute.Contact} element={<Contact />} />
+      <Route path={AppRoute.FlowerDetails} element={<FlowerDetails />} />
     </Switch>
   );
 };

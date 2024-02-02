@@ -4,12 +4,21 @@ import { useRef } from "react";
 import { useGesture } from "@use-gesture/react";
 import { animated, to, useSpring } from "@react-spring/web";
 import { Link } from "react-router-dom";
+import { atom, useAtom } from "jotai";
 
 type Props = {
   flower: Flower;
 };
 
+export const selectedFlowerAtom = atom<Flower | undefined>(undefined);
+
 export const CatalogFlower = ({ flower }: Props) => {
+  const [, setSelectedFlower] = useAtom(selectedFlowerAtom);
+
+  const handleOnClickFlower = () => {
+    setSelectedFlower(flower);
+  };
+
   const target = useRef(null);
 
   const [{ zoom, scale }, api] = useSpring(() => ({
@@ -32,7 +41,10 @@ export const CatalogFlower = ({ flower }: Props) => {
   return (
     <div className="p-2">
       <Link to={`/catalog/${flower.id}`}>
-        <div className="z-10 overflow-hidden max-w-[700px] max-h-[500px] cursor-pointer">
+        <div
+          className="z-10 overflow-hidden max-w-[700px] max-h-[500px] cursor-pointer"
+          onClick={handleOnClickFlower}
+        >
           <animated.div
             ref={target}
             style={{

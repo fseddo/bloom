@@ -1,24 +1,25 @@
 import { Link } from "react-router-dom";
 import { BsHandbag } from "react-icons/bs";
+import { AppRoute } from "../common/AppRoute";
 
 export const Navbar = () => {
   return (
     <nav>
       <div className="flex w-full h-fit bg-beige gap-4 px-2 py-1 items-center">
         <div className="min-w-[250px]">
-          <img width={250} src="logo.png" />
+          <img width={250} src="/logo.png" />
         </div>
         <div className="inline-block m-auto text-subtext font-quicksand p-6 text-lg">
-          <Link className="px-8" to="/">
+          <Link className="px-8" to={AppRoute.Home}>
             Home
           </Link>
-          <Link className="px-8" to="/catalog">
+          <Link className="px-8" to={AppRoute.Catalog}>
             Catalog
           </Link>
-          <Link className="px-8" to="/about">
+          <Link className="px-8" to={AppRoute.About}>
             About
           </Link>
-          <Link className="px-8" to="/contact">
+          <Link className="px-8" to={AppRoute.Contact}>
             Contact Us
           </Link>
         </div>
