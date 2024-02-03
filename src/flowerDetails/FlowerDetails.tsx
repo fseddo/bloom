@@ -35,6 +35,7 @@ export const FlowerDetails = () => {
       requestedFlower != selectedFlower
     ) {
       setSelectedFlower(requestedFlower);
+      setSelectedImageUrl(requestedFlower.imageUrl);
     }
   }, [selectedFlower, requestedFlower, setSelectedFlower]);
 
