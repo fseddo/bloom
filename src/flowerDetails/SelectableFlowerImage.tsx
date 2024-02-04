@@ -48,7 +48,7 @@ export const SelectableFlowerImage = ({ imageUrl }: Props) => {
     <animated.div
       {...bindHover()}
       style={style}
-      className={twJoin("w-60 cursor-pointer border-4  border-gray-500")}
+      className={twJoin("w-48 cursor-pointer border-4 border-gray-500")}
       onClick={() => handleOnClickImage(imageUrl)}
     >
       <img src={imageUrl} />
