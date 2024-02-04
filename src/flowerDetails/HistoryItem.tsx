@@ -17,7 +17,7 @@ export const HistoryItem = ({ route, label, isDisabled = false }: Props) => {
 
   const [style] = useSpring(
     () => ({
-      opacity: isMouseOver && !isDisabled ? 1 : 0.7,
+      opacity: isMouseOver && !isDisabled ? 1 : 0.9,
       textDecoration: isMouseOver && !isDisabled ? "underline" : "none",
       config: {
         mass: 1,

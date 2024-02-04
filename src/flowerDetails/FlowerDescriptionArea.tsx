@@ -8,8 +8,8 @@ type Props = {
 
 export const FlowerDescriptionArea = ({ flower }: Props) => {
   return (
-    <div className="flex flex-col px-10 py-4 gap-10">
-      <div className="flex flex-col gap-10">
+    <div className="flex flex-col p-10 gap-14">
+      <div className="flex flex-col gap-16">
         <div className="text-6xl font-bold font-playfair">{flower.name}</div>
         <div className="text-2xl font-bold mr-28">{flower.description}</div>
       </div>

@@ -12,11 +12,9 @@ type Props = {
 export const NavItem = ({ label, route }: Props) => {
   const [isMouseOver, setIsMouseOver] = useState(false);
   const bindHover = useHover(({ active }) => setIsMouseOver(active));
-  const { pathname, state, hash } = useLocation();
+  const { pathname } = useLocation();
 
   const isSelected = useMemo(() => route === pathname, [route, pathname]);
-
-  console.log({ pathname, state, hash });
 
   const opacity = useMemo(() => {
     if (isMouseOver) return 1;
