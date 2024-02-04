@@ -15,9 +15,10 @@ export const SelectableFlowerImage = ({ imageUrl }: Props) => {
 
   const bindHover = useHover(({ active }) => setIsMouseOver(active));
 
-  const isSelected = useMemo(() => {
-    return selectedImageUrl === imageUrl;
-  }, [selectedImageUrl, imageUrl]);
+  const isSelected = useMemo(
+    () => selectedImageUrl === imageUrl,
+    [selectedImageUrl, imageUrl]
+  );
 
   const opacity = useMemo(() => {
     if (isMouseOver) return 1;

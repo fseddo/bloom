@@ -1,4 +1,5 @@
 import { Flower } from "../types/flower/Flower";
+import { HistoryItems } from "./HistoryItems";
 import { SelectableFlowerImage } from "./SelectableFlowerImage";
 
 type Props = {
@@ -18,7 +19,8 @@ export const FlowerImageSelectionArea = ({
         <SelectableFlowerImage imageUrl={flower.imageUrlsecondary} />
       </div>
       {/*main image*/}
-      <div className="flex items-start">
+      <div className="flex flex-col items-start gap-2">
+        <HistoryItems flower={flower} />
         <img className="max-w-[850px]" src={selectedImageUrl} />
       </div>
     </div>

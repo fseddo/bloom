@@ -1,4 +1,4 @@
-import preval from "preval.macro";
+import resolveConfig from "tailwindcss/resolveConfig";
 
 type CustomConfig = {
   theme: {
@@ -66,11 +66,9 @@ type CustomConfig = {
   };
 };
 
-export const { theme }: CustomConfig = preval`
-  const resolveConfig = require('tailwindcss/resolveConfig');
-  const tailwindConfig = require('../../tailwind.config');
-  module.exports = resolveConfig(tailwindConfig);
-`;
+import tailwindConfig from "../tailwind.config";
+const config = resolveConfig(tailwindConfig) as CustomConfig;
+export const theme = config.theme;
 
 export const spacing = {
   zero: 0,

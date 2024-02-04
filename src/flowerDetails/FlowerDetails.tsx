@@ -21,9 +21,10 @@ export const FlowerDetails = () => {
     queryFn: () => getFlower({ id: flowerId }),
   });
 
-  const isNewFlower = useMemo(() => {
-    return requestedFlower != null && selectedFlower != requestedFlower;
-  }, [requestedFlower, selectedFlower]);
+  const isNewFlower = useMemo(
+    () => requestedFlower != null && selectedFlower != requestedFlower,
+    [requestedFlower, selectedFlower]
+  );
 
   useEffect(() => {
     if (isNewFlower) {

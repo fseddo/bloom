@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
 import { BsHandbag } from "react-icons/bs";
 import { AppRoute } from "../common/AppRoute";
+import { NavItem } from "./NavItem";
 
 export const Navbar = () => {
   return (
@@ -9,21 +9,13 @@ export const Navbar = () => {
         <div className="min-w-[250px]">
           <img width={250} src="/logo.png" />
         </div>
-        <div className="inline-block m-auto text-subtext font-quicksand p-6 text-lg">
-          <Link className="px-8" to={AppRoute.Home}>
-            Home
-          </Link>
-          <Link className="px-8" to={AppRoute.Catalog}>
-            Catalog
-          </Link>
-          <Link className="px-8" to={AppRoute.About}>
-            About
-          </Link>
-          <Link className="px-8" to={AppRoute.Contact}>
-            Contact Us
-          </Link>
+        <div className="flex m-auto text-gray-900 font-quicksand p-6 text-lg">
+          <NavItem label="Home" route={AppRoute.Home} />
+          <NavItem label="Catalog" route={AppRoute.Catalog} />
+          <NavItem label="About" route={AppRoute.About} />
+          <NavItem label="Contact" route={AppRoute.Contact} />
         </div>
-        <div>
+        <div className="pr-8">
           <BsHandbag size={23} />
         </div>
       </div>
