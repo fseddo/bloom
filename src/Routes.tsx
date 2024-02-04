@@ -1,10 +1,10 @@
 import { Routes as Switch, Route } from "react-router-dom";
-import { Home } from "../home/Home";
-import { Catalog } from "../catalog/Catalog";
-import { Contact } from "../contact/Contact";
-import { About } from "../about/About";
-import { FlowerDetails } from "../flowerDetails/FlowerDetails";
-import { AppRoute } from "../common/AppRoute";
+import { Home } from "./home/Home";
+import { Catalog } from "./catalog/Catalog";
+import { Contact } from "./contact/Contact";
+import { About } from "./about/About";
+import { FlowerDetails } from "./flowerDetails/FlowerDetails";
+import { AppRoute } from "./common/AppRoute";
 
 export const Routes = () => {
   return (

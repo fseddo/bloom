@@ -1,5 +1,5 @@
 import { Navbar } from "./nav/Navbar";
-import { Routes } from "./nav/Routes";
+import { Routes } from "./Routes";
 
 const App = () => {
   return (
