@@ -37,7 +37,7 @@ export const Contact = () => {
 
   return (
     <div className="flex py-16 justify-center">
-      <div className="flex font-bold flex-col w-2/5 gap-10">
+      <div className="flex font-bold flex-col w-2/6 gap-10">
         <div className="text-4xl pr-40 font-playfair">Submit A Request</div>
         <form
           onSubmit={handleSubmit(handleOnSubmit)}
