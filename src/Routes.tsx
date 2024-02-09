@@ -5,15 +5,20 @@ import { Contact } from "./contact/Contact";
 import { About } from "./about/About";
 import { FlowerDetails } from "./flowerDetails/FlowerDetails";
 import { AppRoute } from "./common/AppRoute";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const Routes = () => {
   return (
-    <Switch>
-      <Route path={AppRoute.Home} element={<Home />} />
-      <Route path={AppRoute.Catalog} element={<Catalog />} />
-      <Route path={AppRoute.About} element={<About />} />
-      <Route path={AppRoute.Contact} element={<Contact />} />
-      <Route path={AppRoute.FlowerDetails} element={<FlowerDetails />} />
-    </Switch>
+    <>
+      <Switch>
+        <Route path={AppRoute.Home} element={<Home />} />
+        <Route path={AppRoute.Catalog} element={<Catalog />} />
+        <Route path={AppRoute.About} element={<About />} />
+        <Route path={AppRoute.Contact} element={<Contact />} />
+        <Route path={AppRoute.FlowerDetails} element={<FlowerDetails />} />
+      </Switch>
+      <ToastContainer position="bottom-right" theme="colored" />
+    </>
   );
 };

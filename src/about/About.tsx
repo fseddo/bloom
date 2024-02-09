@@ -8,6 +8,7 @@ export const About = () => {
         <div className="text-4xl font-bold">
           Hey there! We are Bloom Flower Boutique.
         </div>
+
         <div className="text-xl font-bold">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut morbi
