@@ -7,14 +7,16 @@ import { Link } from "react-router-dom";
 import { atom, useAtom } from "jotai";
 import { getPath } from "../common/getPath";
 import { AppRoute } from "../common/AppRoute";
+import { Button } from "../common/Button";
 
 type Props = {
   flower: Flower;
+  isHomeView?: boolean;
 };
 
 export const selectedFlowerAtom = atom<Flower | undefined>(undefined);
 
-export const CatalogFlower = ({ flower }: Props) => {
+export const CatalogFlower = ({ flower, isHomeView = false }: Props) => {
   const [, setSelectedFlower] = useAtom(selectedFlowerAtom);
 
   const handleOnClickFlower = () => {
@@ -60,10 +62,24 @@ export const CatalogFlower = ({ flower }: Props) => {
         </div>
       </Link>
 
-      <div className="flex flex-col justify-center items-center text-lg font-bold font-playfair p-1">
-        <div>{flower.name}</div>
-        <div className="font-light text-base">{convertPrice(flower.price)}</div>
-      </div>
+      {!isHomeView && (
+        <div className="flex flex-col justify-center items-center text-lg font-bold font-playfair p-1">
+          <div>{flower.name}</div>
+          <div className="font-light text-base">
+            {convertPrice(flower.price)}
+          </div>
+        </div>
+      )}
+
+      {isHomeView && (
+        <div className="w-full pt-3">
+          <Button
+            label="Add to Cart"
+            className="text-white font-normal flex w-full justify-center py-1"
+            handleOnClick={() => {}}
+          />
+        </div>
+      )}
     </div>
   );
 };

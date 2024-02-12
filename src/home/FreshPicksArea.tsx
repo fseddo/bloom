@@ -105,7 +105,7 @@ export const FreshPicksArea = () => {
 
         <div className="flex px-40">
           {suggestedFlowers?.map((flower) => (
-            <CatalogFlower flower={flower} />
+            <CatalogFlower flower={flower} isHomeView />
           ))}
         </div>
       </div>

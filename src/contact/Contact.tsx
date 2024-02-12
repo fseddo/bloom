@@ -1,8 +1,8 @@
-import { Button } from "@material-tailwind/react";
 import { Input } from "./Input";
 import { toast } from "react-toastify";
 import { useCallback } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { Button } from "../common/Button";
 
 type ContactFormData = {
   firstName: string;
@@ -95,9 +95,7 @@ export const Contact = () => {
               onChange: () => trigger(),
             })}
           />
-          <Button type="submit" placeholder="submit">
-            Submit
-          </Button>
+          <Button type="submit" label="Submit" />
         </form>
       </div>
     </div>
