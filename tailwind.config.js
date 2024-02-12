@@ -16,6 +16,8 @@ export default withMT({
       beige: "#e6e6e6",
       subtext: "#000000",
       catalog: "#fbfbfb",
+      pinkButton: "#ff839e",
+      pinkButtonHover: "#eb7992",
 
       // https://colorkit.io/shades-tints#db6d6d-9 - REDS
       red: {
@@ -64,6 +66,9 @@ export default withMT({
       sans: ["Lato", "sans-serif"],
       playfair: ["Playfair Display"],
       quicksand: ["Quicksand"],
+      quattrocento: ["Quattrocento"],
+      jost: ["Jost"],
+      josefinSans: ["Josefin Sans"],
     },
   },
   plugins: [],

@@ -14,6 +14,8 @@ type CustomConfig = {
       black: "#000000";
       beige: "#ede8ea";
       catalog: "#f6f5f8";
+      pinkButton: "#ff839e";
+      pinkButtonHover: "#eb7992";
 
       // https://colorkit.io/shades-tints#db6d6d-9 - REDS
       red: {
@@ -62,6 +64,9 @@ type CustomConfig = {
       sans: ["Lato", "sans-serif"];
       playfair: ['"Playfair Display"'];
       quicksand: ["Quicksand"];
+      quattrocento: ["Quattrocento"];
+      jost: ["Jost"];
+      josefinSans: ["Josefin Sans"];
     };
   };
 };

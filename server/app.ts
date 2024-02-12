@@ -40,6 +40,10 @@ app.use(express.json());
 // auth and api routes
 app.use("/api", apiRouter);
 
+// flower routes
+
+app.use("/flowers", flowerRouter);
+
 // static file-serving middleware
 app.use(express.static(path.join(__dirname, "..", "public")));
 
