@@ -36,8 +36,6 @@ export const FreshPicksArea = () => {
     queryFn: getPlantFlowers,
   });
 
-  console.log({ bestSellers });
-
   useEffect(() => {
     if (
       bestSellers != null &&
