@@ -1,6 +1,6 @@
 import { Flower } from "../types/flower/Flower";
 import { convertPrice } from "../common/convertPrice";
-import { useRef } from "react";
+import { useCallback, useRef } from "react";
 import { useGesture } from "@use-gesture/react";
 import { animated, to, useSpring } from "@react-spring/web";
 import { Link } from "react-router-dom";
@@ -8,6 +8,8 @@ import { atom, useAtom } from "jotai";
 import { getPath } from "../common/getPath";
 import { AppRoute } from "../common/AppRoute";
 import { Button } from "../common/Button";
+import { cartAtom } from "../nav/Navbar";
+import { addToCart } from "../common/addToCart";
 
 type Props = {
   flower: Flower;
@@ -18,10 +20,7 @@ export const selectedFlowerAtom = atom<Flower | undefined>(undefined);
 
 export const CatalogFlower = ({ flower, isHomeView = false }: Props) => {
   const [, setSelectedFlower] = useAtom(selectedFlowerAtom);
-
-  const handleOnClickFlower = () => {
-    setSelectedFlower(flower);
-  };
+  const [cart, setCart] = useAtom(cartAtom);
 
   const target = useRef(null);
 
@@ -34,13 +33,23 @@ export const CatalogFlower = ({ flower, isHomeView = false }: Props) => {
   useGesture(
     {
       onMove: () =>
-        api({
+        api.start({
           scale: 1.1,
         }),
-      onHover: ({ hovering }) => !hovering && api({ scale: 1 }),
+      onHover: ({ hovering }) => !hovering && api.start({ scale: 1 }),
     },
     { target, eventOptions: { passive: false } }
   );
+
+  const handleOnClickFlower = useCallback(() => {
+    setSelectedFlower(flower);
+  }, [setSelectedFlower, flower]);
+
+  const handleOnAddToCart = useCallback(() => {
+    addToCart({ cart, setCart, flower });
+  }, [cart, setCart, flower]);
+
+  console.log("cart", cart);
 
   return (
     <div className="p-2">
@@ -76,7 +85,7 @@ export const CatalogFlower = ({ flower, isHomeView = false }: Props) => {
           <Button
             label="Add to Cart"
             className="text-white font-normal flex w-full justify-center py-1"
-            handleOnClick={() => {}}
+            handleOnClick={handleOnAddToCart}
           />
         </div>
       )}

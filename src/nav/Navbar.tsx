@@ -1,6 +1,10 @@
 import { BsHandbag } from "react-icons/bs";
 import { AppRoute } from "../common/AppRoute";
 import { NavItem } from "./NavItem";
+import { atomWithStorage } from "jotai/utils";
+import { Cart } from "../types/order/Cart";
+
+export const cartAtom = atomWithStorage<Cart>("cart", undefined);
 
 export const Navbar = () => {
   return (
