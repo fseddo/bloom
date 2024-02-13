@@ -76,7 +76,7 @@ export const FreshPicksArea = () => {
       <div className="pt-20 pb-16 flex justify-center flex-col items-center gap-6">
         <div className="text-6xl font-bold font-playfair">Fresh Picks</div>
         <div className="font-josefinSans text-lg">
-          Where to start? We've got you covered. These area few of our favorite
+          Where to start? We've got you covered. These are a few of our favorite
           things!
         </div>
       </div>

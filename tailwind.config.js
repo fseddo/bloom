@@ -12,7 +12,7 @@ export default {
       currentColor: "currentColor",
       white: "#ffffff",
       black: "#000000",
-      beige: "#e6e6e6",
+      beige: "#e4e2dd",
       subtext: "#000000",
       catalog: "#fbfbfb",
       pinkButton: "#ff839e",
