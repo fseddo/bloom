@@ -2,7 +2,7 @@ import { Review } from "./Review";
 
 export const Reviews = () => {
   return (
-    <div className="w-2/3 gap-10 px-20 flex justify-center">
+    <div className="w-5/6 gap-10 px-20 flex justify-center">
       <Review
         name="Ngoc M."
         subject="Even more stunning in real life"
