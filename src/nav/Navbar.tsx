@@ -26,15 +26,15 @@ export const Navbar = () => {
           </Link>
         </div>
         <div className="flex w-full justify-center items-center">
-          <div className="flex text-gray-900 gap-6 font-josefinSans text-xl">
+          <div className="flex text-gray-900 gap-14 font-jost text-lg">
             <NavItem label="Catalog" route={AppRoute.Catalog} />
             <NavItem label="About" route={AppRoute.About} />
             <NavItem label="Contact" route={AppRoute.Contact} />
           </div>
         </div>
         <NavItem disableIsSelected route={AppRoute.Checkout}>
-          <div className="flex justify-end gap-2 font-josefinSans text-lg text-gray-900 w-[150px]">
-            <BsHandbag size={23} />
+          <div className="flex justify-end gap-2 font-jost text-base text-gray-900 w-[150px]">
+            <BsHandbag size={20} />
             Cart {cartTotal > 0 && `(${cartTotal})`}
           </div>
         </NavItem>
