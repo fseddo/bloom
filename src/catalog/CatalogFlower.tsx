@@ -9,7 +9,7 @@ import { getPath } from "../common/getPath";
 import { AppRoute } from "../common/AppRoute";
 import { Button } from "../common/Button";
 import { cartAtom } from "../nav/Navbar";
-import { addToCart } from "../common/addToCart";
+import { addToCart } from "../cart/addToCart";
 
 type Props = {
   flower: Flower;
@@ -48,8 +48,6 @@ export const CatalogFlower = ({ flower, isHomeView = false }: Props) => {
   const handleOnAddToCart = useCallback(() => {
     addToCart({ cart, setCart, flower });
   }, [cart, setCart, flower]);
-
-  console.log("cart", cart);
 
   return (
     <div className="p-2">

@@ -1,3 +1,3 @@
-import { Order } from "./Order";
+import { CartItem } from "./CartItem";
 
-export type Cart = Order[] | undefined;
+export type Cart = CartItem[] | undefined;

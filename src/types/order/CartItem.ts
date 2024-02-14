@@ -1,6 +1,6 @@
 import { Flower } from "../flower/Flower";
 
-export type Order = {
+export type CartItem = {
   flower: Flower;
   quantity: number;
 };

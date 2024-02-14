@@ -6,6 +6,7 @@ import { About } from "./about/About";
 import { FlowerDetails } from "./flowerDetails/FlowerDetails";
 import { AppRoute } from "./common/AppRoute";
 import { ToastContainer } from "react-toastify";
+import { Checkout } from "./checkout/Checkout";
 import "react-toastify/dist/ReactToastify.css";
 
 export const Routes = () => {
@@ -17,6 +18,7 @@ export const Routes = () => {
         <Route path={AppRoute.About} element={<About />} />
         <Route path={AppRoute.Contact} element={<Contact />} />
         <Route path={AppRoute.FlowerDetails} element={<FlowerDetails />} />
+        <Route path={AppRoute.Checkout} element={<Checkout />} />
       </Switch>
       <ToastContainer position="bottom-right" theme="colored" />
     </>

@@ -3,28 +3,41 @@ import { AppRoute } from "../common/AppRoute";
 import { NavItem } from "./NavItem";
 import { atomWithStorage } from "jotai/utils";
 import { Cart } from "../types/order/Cart";
+import { getCartTotal } from "../cart/getCartTotal";
+import { useAtom } from "jotai";
+import { useMemo } from "react";
+import { Link } from "react-router-dom";
 
 export const cartAtom = atomWithStorage<Cart>("cart", undefined);
 
 export const Navbar = () => {
+  const [cart] = useAtom(cartAtom);
+
+  const cartTotal = useMemo(() => {
+    return getCartTotal(cart);
+  }, [getCartTotal, cart]);
+
   return (
-    <nav>
-      <div className="flex w-full h-fit bg-beige gap-4 px-2 py-1 items-center">
-        <div className="min-w-[250px]">
-          <img width={250} src="/bloom-logo.png" />
+    <nav className="sticky top-0 z-50">
+      <div className="flex w-full h-fit bg-beige gap-4 p-2 items-center pr-4 drop-shadow-sm">
+        <div>
+          <Link to={AppRoute.Home}>
+            <img width={150} src="/bloom-logo.png" />
+          </Link>
         </div>
-        <div className="flex w-full justify-between px-10 items-center">
-          <div className="flex text-gray-900 gap-6 font-josefinSans p-6 text-xl">
-            <NavItem label="Home" route={AppRoute.Home} />
+        <div className="flex w-full justify-center items-center">
+          <div className="flex text-gray-900 gap-6 font-josefinSans text-xl">
             <NavItem label="Catalog" route={AppRoute.Catalog} />
             <NavItem label="About" route={AppRoute.About} />
             <NavItem label="Contact" route={AppRoute.Contact} />
           </div>
-          <div className="flex gap-3 text-gray-900  font-josefinSans text-lg pr-8">
-            <BsHandbag size={23} />
-            Cart
-          </div>
         </div>
+        <NavItem disableIsSelected route={AppRoute.Checkout}>
+          <div className="flex justify-end gap-2 font-josefinSans text-lg text-gray-900 w-[150px]">
+            <BsHandbag size={23} />
+            Cart {cartTotal > 0 && `(${cartTotal})`}
+          </div>
+        </NavItem>
       </div>
     </nav>
   );

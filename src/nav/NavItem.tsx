@@ -1,20 +1,29 @@
 import { Link, useLocation } from "react-router-dom";
 import { AppRoute } from "../common/AppRoute";
-import { useMemo, useState } from "react";
+import { PropsWithChildren, useMemo, useState } from "react";
 import { useHover } from "@use-gesture/react";
 import { animated, useSpring } from "@react-spring/web";
 
 type Props = {
-  label: string;
+  label?: string;
   route: AppRoute;
+  disableIsSelected?: boolean;
 };
 
-export const NavItem = ({ label, route }: Props) => {
+export const NavItem = ({
+  label,
+  route,
+  children,
+  disableIsSelected = false,
+}: PropsWithChildren<Props>) => {
   const [isMouseOver, setIsMouseOver] = useState(false);
   const bindHover = useHover(({ active }) => setIsMouseOver(active));
   const { pathname } = useLocation();
 
-  const isSelected = useMemo(() => route === pathname, [route, pathname]);
+  const isSelected = useMemo(
+    () => route === pathname && !disableIsSelected,
+    [route, pathname]
+  );
 
   const opacity = useMemo(() => {
     if (isMouseOver) return 1;
@@ -36,7 +45,10 @@ export const NavItem = ({ label, route }: Props) => {
 
   return (
     <animated.div {...bindHover()} style={style} className="px-8">
-      <Link to={route}>{label}</Link>
+      <Link to={route}>
+        {label}
+        {children}
+      </Link>
     </animated.div>
   );
 };
