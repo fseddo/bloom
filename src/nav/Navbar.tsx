@@ -3,7 +3,7 @@ import { AppRoute } from "../common/AppRoute";
 import { NavItem } from "./NavItem";
 import { atomWithStorage } from "jotai/utils";
 import { Cart } from "../types/order/Cart";
-import { getCartTotal } from "../cart/getCartTotal";
+import { getCartTotalItems } from "../cart/getCartTotalItems";
 import { useAtom } from "jotai";
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
@@ -14,8 +14,8 @@ export const Navbar = () => {
   const [cart] = useAtom(cartAtom);
 
   const cartTotal = useMemo(() => {
-    return getCartTotal(cart);
-  }, [getCartTotal, cart]);
+    return getCartTotalItems(cart);
+  }, [getCartTotalItems, cart]);
 
   return (
     <nav className="sticky top-0 z-50">

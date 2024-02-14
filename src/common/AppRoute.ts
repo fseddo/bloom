@@ -5,4 +5,5 @@ export enum AppRoute {
   About = "/about",
   Contact = "/contact",
   Checkout = "/checkout",
+  CheckoutConfirm = "/checkout/confirm",
 }

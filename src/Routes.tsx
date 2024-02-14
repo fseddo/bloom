@@ -8,6 +8,7 @@ import { AppRoute } from "./common/AppRoute";
 import { ToastContainer } from "react-toastify";
 import { Checkout } from "./checkout/Checkout";
 import "react-toastify/dist/ReactToastify.css";
+import { CheckoutConfirm } from "./checkout/CheckoutConfirm";
 
 export const Routes = () => {
   return (
@@ -19,6 +20,7 @@ export const Routes = () => {
         <Route path={AppRoute.Contact} element={<Contact />} />
         <Route path={AppRoute.FlowerDetails} element={<FlowerDetails />} />
         <Route path={AppRoute.Checkout} element={<Checkout />} />
+        <Route path={AppRoute.CheckoutConfirm} element={<CheckoutConfirm />} />
       </Switch>
       <ToastContainer position="bottom-right" theme="colored" />
     </>
