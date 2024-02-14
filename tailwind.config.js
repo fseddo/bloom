@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
-export default {
+const config = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     boxShadow: {
@@ -72,3 +72,5 @@ export default {
   },
   plugins: [],
 };
+
+module.exports = config;

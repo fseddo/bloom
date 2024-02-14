@@ -71,7 +71,7 @@ type CustomConfig = {
   };
 };
 
-import tailwindConfig from "../tailwind.config";
+const tailwindConfig = require("../tailwind.config.js");
 const config = resolveConfig(tailwindConfig) as CustomConfig;
 export const theme = config.theme;
 
