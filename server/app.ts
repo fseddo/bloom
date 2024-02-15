@@ -40,9 +40,9 @@ app.use(express.json());
 // auth and api routes
 app.use("/api", apiRouter);
 
-// flower routes
-
-app.use("/flowers", flowerRouter);
+app.get("/", (req, res) =>
+  res.sendFile(path.join(__dirname, "..", "public/index.html"))
+);
 
 // static file-serving middleware
 app.use(express.static(path.join(__dirname, "..", "public")));
