@@ -41,7 +41,7 @@ app.use(express.json());
 app.use("/api", apiRouter);
 
 app.get("/", (req, res) =>
-  res.sendFile(path.join(__dirname, "..", "public/index.html"))
+  res.sendFile(path.join(__dirname, "..", "index.html"))
 );
 
 // static file-serving middleware
@@ -59,7 +59,7 @@ app.use((req, res, next) => {
 
 // sends index.html
 app.use("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "..", "public/index.html"));
+  res.sendFile(path.join(__dirname, "..", "index.html"));
 });
 
 // error handling endware
