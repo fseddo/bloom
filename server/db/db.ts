@@ -7,7 +7,15 @@ const config = {
   logging: false,
 };
 
-export const db = new Sequelize(
-  process.env.DATABASE_URL || `postgres://localhost:5432/${dbName}`,
-  config
-);
+export const db = new Sequelize({
+  database: dbName,
+  host: "localhost",
+  port: 5432,
+  dialect: "postgres",
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false,
+    },
+  },
+});
