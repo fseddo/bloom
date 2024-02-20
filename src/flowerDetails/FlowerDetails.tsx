@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { QueryKey } from "../common/QueryKey";
 import { getFlower } from "../network/getFlower";
-import { useEffect, useMemo } from "react";
+import { useEffect } from "react";
 import { FlowerImageSelectionArea } from "./FlowerImageSelectionArea";
 import { FlowerDescriptionArea } from "./FlowerDescriptionArea";
 
@@ -21,16 +21,9 @@ export const FlowerDetails = () => {
     queryFn: () => getFlower({ id: flowerId }),
   });
 
-  const isNewFlower = useMemo(
-    () => requestedFlower != null && selectedFlower != requestedFlower,
-    [requestedFlower, selectedFlower]
-  );
-
   useEffect(() => {
-    if (isNewFlower) {
-      setSelectedFlower(requestedFlower);
-      setSelectedImageUrl(requestedFlower?.imageUrl);
-    }
+    setSelectedFlower(requestedFlower);
+    setSelectedImageUrl(requestedFlower?.imageUrl);
   }, [selectedFlower, requestedFlower, setSelectedFlower, setSelectedImageUrl]);
 
   if (selectedFlower == null) return <></>;

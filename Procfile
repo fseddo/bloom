@@ -1,1 +1,1 @@
-web: npx tsx server/app.ts
+web: npx tsx --watch server

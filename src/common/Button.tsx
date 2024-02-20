@@ -2,7 +2,6 @@ import { useSpring, animated } from "@react-spring/web";
 import { useHover } from "@use-gesture/react";
 import React, { useCallback, useState } from "react";
 import { twMerge } from "tailwind-merge";
-import { theme } from "../theme";
 
 type Props = {
   color?: string;
@@ -15,8 +14,8 @@ type Props = {
 };
 
 export const Button = ({
-  color = theme.colors.black,
-  hoverColor = theme.colors.gray[900],
+  color = "bg-black",
+  hoverColor = "bg-gray-900",
   className,
   label,
   styling,
@@ -28,7 +27,6 @@ export const Button = ({
 
   const [style] = useSpring(
     () => ({
-      backgroundColor: isMouseOver ? hoverColor : color,
       config: {
         mass: 1,
         tension: 140,
@@ -48,6 +46,7 @@ export const Button = ({
       {...bindHover()}
       className={twMerge(
         "px-10 py-3 text-xl rounded-md font-jost font-medium text-white",
+        isMouseOver ? hoverColor : color,
         className
       )}
       onClick={handleOnClickButton}

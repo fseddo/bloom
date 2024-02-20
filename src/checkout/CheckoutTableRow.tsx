@@ -2,7 +2,6 @@ import { CartItem } from "../types/order/CartItem";
 import { convertPrice } from "../common/convertPrice";
 import { ProductCell } from "./ProductCell";
 import { AiOutlineClose } from "react-icons/ai";
-import { theme } from "../theme";
 import { useAtom } from "jotai";
 import { cartAtom } from "../nav/Navbar";
 import { useCallback } from "react";
@@ -30,10 +29,9 @@ export const CheckoutTableRow = ({ cartItem }: Props) => {
       </td>
       <td>
         <AiOutlineClose
-          className="cursor-pointer"
+          className="cursor-pointer text-gray-500"
           onClick={handleOnDelete}
           size={15}
-          color={theme.colors.gray[500]}
         />
       </td>
     </tr>

@@ -1,38 +1,33 @@
+import path, { dirname } from "path";
 import express from "express";
-import path from "path";
-import { fileURLToPath } from "url";
-import { flowerRouter } from "./api/flowers";
 import { apiRouter } from "./api";
-import { seed } from "../script/seed";
-import { db } from "./db/db";
+import { fileURLToPath } from "url";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __filename = dirname(fileURLToPath(import.meta.url));
+const __dirname = import.meta.dirname;
 
 export const app = express();
 
-const PORT = process.env.PORT || 8080;
+// //CORS middlware
+// app.use(function (req, res, next) {
+//   // Website you wish to allow to connect
+//   res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173");
 
-//CORS middlware
-app.use(function (req, res, next) {
-  // Website you wish to allow to connect
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173");
+//   // Request methods you wish to allow
+//   res.setHeader(
+//     "Access-Control-Allow-Methods",
+//     "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+//   );
 
-  // Request methods you wish to allow
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET, POST, OPTIONS, PUT, PATCH, DELETE"
-  );
+//   // Request headers you wish to allow
+//   res.setHeader(
+//     "Access-Control-Allow-Headers",
+//     "X-Requested-With,content-type"
+//   );
 
-  // Request headers you wish to allow
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "X-Requested-With,content-type"
-  );
-
-  // Pass to next layer of middleware
-  next();
-});
+//   // Pass to next layer of middleware
+//   next();
+// });
 
 // body parsing middleware
 app.use(express.json());
@@ -41,11 +36,11 @@ app.use(express.json());
 app.use("/api", apiRouter);
 
 app.get("/", (req, res) =>
-  res.sendFile(path.join(__dirname, "..", "index.html"))
+  res.sendFile(path.join(__dirname, "..", "dist/index.html"))
 );
 
 // static file-serving middleware
-app.use(express.static(path.join(__dirname, "..", "public")));
+app.use(express.static(path.join(__dirname, "..", "dist")));
 
 // any remaining requests with an extension (.js, .css, etc.) send 404
 app.use((req, res, next) => {
@@ -59,7 +54,7 @@ app.use((req, res, next) => {
 
 // sends index.html
 app.use("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "..", "index.html"));
+  res.sendFile(path.join(__dirname, "..", "dist/index.html"));
 });
 
 // error handling endware
@@ -68,19 +63,3 @@ app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(err.status || 500).send(err.message || "Internal server error.");
 });
-
-const init = async () => {
-  try {
-    if (process.env.SEED === "true") {
-      await seed();
-    } else {
-      await db.sync();
-    }
-    // start listening (and create a 'server' object representing our server)
-    app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
-  } catch (ex) {
-    console.log(ex);
-  }
-};
-
-init();

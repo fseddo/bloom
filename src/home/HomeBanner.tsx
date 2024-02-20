@@ -1,6 +1,5 @@
 import { AppRoute } from "../common/AppRoute";
 import { Link } from "react-router-dom";
-import { theme } from "../theme";
 import { Button } from "../common/Button";
 
 export const HomeBanner = () => {
@@ -16,8 +15,8 @@ export const HomeBanner = () => {
 
       <Link to={AppRoute.Catalog}>
         <Button
-          color={theme.colors.pinkButton}
-          hoverColor={theme.colors.pinkButtonHover}
+          color={"bg-pinkButton"}
+          hoverColor="bg-pinkButtonHover"
           label="SHOP NOW"
           className="absolute bottom-48 left-1/2 text-black"
           styling={{ transform: "translate(-50%, -50%)" }}

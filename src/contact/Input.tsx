@@ -7,7 +7,6 @@ import {
 } from "react-hook-form";
 import { ErrorMessage } from "./ErrorMessage";
 import { CgAsterisk } from "react-icons/cg";
-import { theme } from "../theme";
 
 type Props<
   TFieldValues extends FieldValues,
@@ -46,8 +45,8 @@ export const Input = forwardRef(
             <div className="flex">
               {label}
               {required && (
-                <div className="mt-1">
-                  <CgAsterisk color={theme.colors.red[400]} size={10} />
+                <div className="mt-1 text-red-400">
+                  <CgAsterisk size={10} />
                 </div>
               )}
             </div>
