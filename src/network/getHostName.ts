@@ -1,3 +1,3 @@
 export const getHostName = () => {
-  return `${import.meta.env.VITE_SERVER_HOST_NAME}/api`;
+  return `https://bloom-1115295ea90a.herokuapp.com/api`;
 };
