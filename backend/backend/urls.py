@@ -20,7 +20,9 @@ from rest_framework import routers
 from bloom import views
 
 router = routers.DefaultRouter()
-router.register(r'flowers', views.FlowerView, 'bloom')
+router.register(r'flowers', views.FlowerView, 'flowers')
+router.register(r'addOnItems', views.AddOnItemView, 'add_on_items')
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
