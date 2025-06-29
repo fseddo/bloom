@@ -9,14 +9,15 @@ class FlowerSerializer(serializers.ModelSerializer):
             'occasion', 
             'collection', 
             'price', 
-            'imageUrls', 
+            'image_urls', 
             'description', 
             'details', 
-            'petSafe',
-            'isSingleVariety',
+            'pet_safe',
+            'is_single_variety',
             'discount',
-            'amountInStock',
-            'deliveryLeadTime'
+            'amount_in_stock',
+            'delivery_lead_time',
+            'type'
         )
         
 
@@ -27,7 +28,7 @@ class AddOnItemSerializer(serializers.ModelSerializer):
         fields = (
             'name', 
             'price', 
-            'imageUrl', 
+            'image_url', 
             'description', 
-            'amountInStock',
+            'amount_in_stock',
         )

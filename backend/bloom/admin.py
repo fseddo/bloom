@@ -7,24 +7,25 @@ class FlowerAdmin(admin.ModelAdmin):
             'occasion', 
             'collection', 
             'price', 
-            'imageUrls', 
+            'image_urls', 
             'description', 
             'details', 
-            'petSafe',
-            'isSingleVariety',
+            'pet_safe',
+            'is_single_variety',
             'discount',
-            'amountInStock',
-            'deliveryLeadTime'
+            'amount_in_stock',
+            'delivery_lead_time',
+            'type'
         )
     
 
 class AddOnItemAdmin(admin.ModelAdmin):
     list_display = (
-        'name', 
+         'name', 
         'price', 
-        'imageUrl', 
+        'image_url', 
         'description', 
-        'amountInStock',
+        'amount_in_stock',
     )
 
 # Register your models here.
